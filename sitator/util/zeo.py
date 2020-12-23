@@ -88,7 +88,7 @@ class Zeopy(object):
         vert_coords = np.asarray([v['coords'] for v in verts])
 
         zeopbcc = PBCCalculator(zeocell)
-        real_pbcc = PBCCalculator(structure.cell)
+        real_pbcc = PBCCalculator(structure.cell[:])
 
         # Bring into Zeo crystal coordinates
         zeopbcc.to_cell_coords(vert_coords)
